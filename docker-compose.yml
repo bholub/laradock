@@ -368,8 +368,12 @@ services:
       depends_on:
         - php-fpm
       networks:
-        - frontend
-        - backend
+        frontend:
+          aliases:
+            - old.wodtogether-api.test
+        backend:
+          aliases:
+            - old.wodtogether-api.test
 
 ### Blackfire ########################################
     blackfire:
